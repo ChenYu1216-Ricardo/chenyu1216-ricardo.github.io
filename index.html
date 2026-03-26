@@ -1,1 +1,238 @@
-<html><main><body>Hello this is Yu</body></main></html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- TODO: Replace with your name and site description -->
+  <title>Your Name's Website</title>
+  <meta name="description"
+    content="Personal website of [Your Name] — essays, projects, and reflections.">
+  <link rel="stylesheet" href="asset/css/theme.css">
+  <link rel="stylesheet" href="asset/css/pages.css">
+  <style>
+    /* ── HORIZONTAL SCROLL FOR FEATURED POSTS ── */
+    .card-grid {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      gap: 1.5rem;
+      padding-bottom: 1.5rem;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .card-grid .post-card {
+      flex: 0 0 auto;
+      width: 320px;
+      scroll-snap-align: start;
+    }
+
+    /* ── INDEX-SPECIFIC ── */
+    .featured-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 1rem;
+    }
+
+    .greeting-section {
+      background: var(--warm-white);
+      border-radius: 3px;
+      box-shadow: 0 2px 10px var(--shadow), 0 0 0 1px var(--border);
+      padding: 2.5rem 2rem;
+      margin-top: 2.5rem;
+      text-align: center;
+    }
+
+    .greeting-section h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: 1.5rem;
+      color: var(--ocean);
+      margin-bottom: 1rem;
+      letter-spacing: 0.04em;
+    }
+
+    .greeting-section p {
+      font-size: 1.02rem;
+      color: var(--text-mid);
+      line-height: 1.85;
+      max-width: 680px;
+      margin: 0 auto 0.8rem;
+    }
+
+    .signature {
+      font-family: 'Crimson Pro', serif;
+      font-style: italic;
+      font-size: 1.6rem;
+      color: var(--ocean-mid);
+      margin-top: 1.2rem;
+    }
+
+    .written-date {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      color: var(--text-light);
+      margin-top: 0.3rem;
+    }
+
+    .professional-banner {
+      display: inline-block;
+      background: transparent;
+      border: 1px solid var(--border-mid);
+      color: var(--ocean-mid);
+      padding: 0.45rem 1.2rem;
+      border-radius: 20px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+      margin-top: 1rem;
+    }
+
+    .professional-banner:hover {
+      background: var(--ocean);
+      color: var(--parchment);
+      border-color: var(--ocean);
+    }
+
+    @media (max-width: 768px) {
+      html, body { overflow-x: hidden; width: 100%; }
+      main { width: 100% !important; max-width: 100vw !important; padding: 0 1rem !important; margin: 0 auto !important; overflow: hidden; }
+      .hero { display: flex !important; flex-direction: column !important; align-items: center !important; justify-content: center !important; text-align: center !important; width: 100% !important; padding: 2.5rem 0.5rem !important; box-sizing: border-box; }
+      .hero-profile { width: 120px !important; height: 120px !important; margin: 0 auto 1.2rem auto !important; display: block !important; }
+      .hero h2 { width: 100% !important; font-size: 1.6rem !important; margin: 0 0 1rem 0 !important; word-wrap: break-word; }
+      .hero p { width: 100% !important; max-width: 100% !important; padding: 0 0.8rem; font-size: 0.95rem !important; line-height: 1.7 !important; }
+      .cta-button, .professional-banner { display: block !important; width: 85% !important; max-width: 280px !important; margin: 0.8rem auto !important; text-align: center !important; box-sizing: border-box; }
+      .card-grid { display: flex !important; padding-left: 0.5rem; padding-right: 0.5rem; gap: 1rem; }
+      .card-grid .post-card { width: 85vw !important; min-width: 260px; }
+      .greeting-section { padding: 1.8rem 1.2rem !important; margin: 2rem 0 !important; width: 100% !important; }
+    }
+
+    @media (max-width: 380px) {
+      .hero h2 { font-size: 1.4rem !important; }
+      .hero-profile { width: 100px !important; height: 100px !important; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <!-- TODO: Replace "Your Name" with your name -->
+    <h1>Your Name &nbsp;·&nbsp; Personal Website</h1>
+    <!-- TODO: Replace with your personal tagline -->
+    <p class="sub">Essays · Projects · Reflections</p>
+  </header>
+
+  <nav id="main-nav">
+    <ul>
+      <li><a href="/" class="active">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="/projects">Projects</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <!-- TODO: Replace with your profile photo path -->
+      <img src="asset/images/placeholder.svg" alt="Your Name" class="hero-profile">
+      <!-- TODO: Replace the heading and bio paragraph with your own -->
+      <h2>Welcome to My World</h2>
+      <p>Hey there! I'm [Your Name]. I'm a student with a passion for learning, creating, and sharing.
+        I love [your interests]. Join me as I navigate my life and ideas.
+      </p>
+      <a href="about/" class="cta-button">Learn More About Me</a>
+      <br>
+      <a href="professional/" class="professional-banner">Visit My Professional Page</a>
+    </section>
+
+    <!-- FEATURED POSTS -->
+    <section>
+      <div class="featured-header">
+        <h2 class="section-title">Featured Posts</h2>
+        <a href="blog/" class="read-more" style="font-size:0.8rem;">View All →</a>
+      </div>
+      <div class="card-grid">
+        <!-- TODO: Replace each post-card with your own featured blog posts.
+             Duplicate this block for additional cards. -->
+        <div class="post-card" style="animation-delay:0s">
+          <img src="asset/images/placeholder.svg" alt="Post Title">
+          <div class="post-card-content">
+            <h3>Your First Featured Post Title</h3>
+            <p>A short description of what this post is about. Keep it to 2–3 sentences.</p>
+          </div>
+          <div class="post-card-footer">
+            <span class="post-card-meta">Month Year · Category</span>
+            <a href="blog/sample-post.html" class="read-more">Read</a>
+          </div>
+        </div>
+        <div class="post-card" style="animation-delay:0.1s">
+          <img src="asset/images/placeholder.svg" alt="Post Title">
+          <div class="post-card-content">
+            <h3>Your Second Featured Post Title</h3>
+            <p>A short description of what this post is about. Keep it to 2–3 sentences.</p>
+          </div>
+          <div class="post-card-footer">
+            <span class="post-card-meta">Month Year · Category</span>
+            <a href="blog/sample-post.html" class="read-more">Read</a>
+          </div>
+        </div>
+        <div class="post-card" style="animation-delay:0.2s">
+          <img src="asset/images/placeholder.svg" alt="Post Title">
+          <div class="post-card-content">
+            <h3>Your Third Featured Post Title</h3>
+            <p>A short description of what this post is about. Keep it to 2–3 sentences.</p>
+          </div>
+          <div class="post-card-footer">
+            <span class="post-card-meta">Month Year · Category</span>
+            <a href="blog/sample-post.html" class="read-more">Read</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GREETING / WHY THIS SITE -->
+    <section class="greeting-section">
+      <!-- TODO: Replace the heading and paragraphs with your own "why I made this" text -->
+      <h2>Why I Made This Website</h2>
+      <p>Share why you created this website — what you hope to document, share, or reflect on.</p>
+      <p>Tell your visitors what they can expect to find here, and what keeps you writing.</p>
+      <p>End with a warm sign-off!</p>
+      <!-- TODO: Replace with your name -->
+      <div class="signature">Your Name</div>
+      <!-- TODO: Replace with the month/year you wrote this -->
+      <div class="written-date">Written Month Year</div>
+    </section>
+  </main>
+
+  <footer>
+    <!-- TODO: Replace "Your Name" and your GitHub Pages URL -->
+    <p>© 2025 Your Name's Website. All rights reserved. &nbsp;·&nbsp;
+      <a href="/">yourusername.github.io</a>
+      &nbsp;·&nbsp; Template by <a href="https://github.com/CS721127" target="_blank" rel="noopener noreferrer">cs721127</a>
+    </p>
+  </footer>
+
+  <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">☰</button>
+
+  <script>
+    const toggle = document.getElementById('nav-toggle');
+    const nav = document.getElementById('main-nav');
+    toggle.addEventListener('click', () => nav.classList.toggle('open'));
+
+    const btt = document.querySelector('.back-to-top');
+    if (btt) {
+      window.addEventListener('scroll', () => btt.classList.toggle('visible', window.scrollY > 300));
+      btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    }
+  </script>
+</body>
+
+</html>

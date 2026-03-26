@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- TODO: Replace "Your Name" with your name -->
+    <title>About Me — Your Name</title>
+    <meta name="description" content="About [Your Name] — student, reader, and curious learner.">
+    <link rel="stylesheet" href="../asset/css/theme.css">
+    <link rel="stylesheet" href="../asset/css/pages.css">
+</head>
+
+<body>
+    <header>
+        <!-- TODO: Replace "Your Name" and your tagline -->
+        <h1>Your Name &nbsp;·&nbsp; About Me</h1>
+        <p class="sub">Student · Reader · Curious Learner</p>
+    </header>
+
+    <nav id="main-nav">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about" class="active">About</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/projects">Projects</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- PROFILE -->
+        <div class="profile-section">
+            <!-- TODO: Replace with your profile photo -->
+            <img src="../asset/images/placeholder.svg" alt="Your Profile Photo" class="profile-image">
+            <div class="profile-info">
+                <!-- TODO: Replace all text below with your own intro -->
+                <h2>Hi, I'm [Your Name]!</h2>
+                <p>I'm a student at [Your University] studying [Your Major]. I am passionate about [your passions] and eager to
+                    explore more! I created my website to share my academic journey, thoughts, and happy moments.</p>
+                <a href="intro/" class="fun-intro-btn">View Fun Introduction</a>
+                <div class="interests">
+                    <!-- TODO: Replace or add interest tags matching your own interests -->
+                    <span class="interest-tag">Interest One</span>
+                    <span class="interest-tag">Interest Two</span>
+                    <span class="interest-tag">Interest Three</span>
+                    <span class="interest-tag">Interest Four</span>
+                    <span class="interest-tag">Interest Five</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- FUN FACTS -->
+        <div class="section-card" id="fun-facts">
+            <h3>A Few Facts About Me</h3>
+            <!-- TODO: Replace with your own fun facts paragraph -->
+            <p>I was born in [year], and I'm currently a student at [University, City]. When I'm not buried in coursework, you
+                can find me [hobby 1], [hobby 2], or [hobby 3]. I am also a huge fan of [personal passion].</p>
+        </div>
+
+        <!-- ACADEMIC JOURNEY -->
+        <div class="section-card">
+            <h3>Academic Journey</h3>
+            <ul class="timeline-list">
+                <!-- TODO: Fill in your education history. Duplicate <li> blocks as needed. -->
+                <li class="timeline-item">
+                    <div class="timeline-date">20XX – Present</div>
+                    <h4>University Name, City</h4>
+                    <p>Degree and major. Brief description of what you study and what excites you about it.</p>
+                </li>
+                <li class="timeline-item">
+                    <div class="timeline-date">20XX – 20XX</div>
+                    <h4>High School Name</h4>
+                    <p>Brief description of your high school experience, achievements, or interests that developed there.</p>
+                </li>
+                <li class="timeline-item">
+                    <div class="timeline-date">20XX – 20XX</div>
+                    <h4>Summer Programs / Research</h4>
+                    <p>List any notable summer programs, research experiences, or other academic milestones.</p>
+                </li>
+            </ul>
+        </div>
+
+        <!-- SKILLS -->
+        <div class="section-card">
+            <h3>Skills &amp; Interests</h3>
+            <div class="skills-grid">
+                <!-- TODO: Replace with your own skills -->
+                <div class="skill-item">Skill One</div>
+                <div class="skill-item">Skill Two</div>
+                <div class="skill-item">Skill Three</div>
+                <div class="skill-item">Skill Four</div>
+                <div class="skill-item">Skill Five</div>
+                <div class="skill-item">Skill Six</div>
+                <div class="skill-item">Skill Seven</div>
+                <div class="skill-item">Skill Eight</div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <!-- TODO: Replace "Your Name" and your GitHub Pages URL -->
+        <p>© 2025 Your Name's Website. All rights reserved. &nbsp;·&nbsp;
+          <a href="/">yourusername.github.io</a>
+          &nbsp;·&nbsp; Template by <a href="https://github.com/CS721127" target="_blank" rel="noopener noreferrer">cs721127</a>
+        </p>
+    </footer>
+
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">☰</button>
+    <button class="back-to-top" id="btt">↑</button>
+
+    <script>
+        document.getElementById('nav-toggle').addEventListener('click', () =>
+            document.getElementById('main-nav').classList.toggle('open'));
+        const btt = document.getElementById('btt');
+        window.addEventListener('scroll', () => btt.classList.toggle('visible', window.scrollY > 300));
+        btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    </script>
+</body>
+
+</html>

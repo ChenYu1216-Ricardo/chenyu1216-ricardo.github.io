@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- TODO: Replace "Your Name" -->
+  <title>Projects — Your Name</title>
+  <meta name="description" content="Projects by [Your Name] — research, software, and creative work.">
+  <link rel="stylesheet" href="../asset/css/theme.css">
+  <link rel="stylesheet" href="../asset/css/pages.css">
+</head>
+
+<body>
+  <header>
+    <!-- TODO: Replace "Your Name" and your tagline -->
+    <h1>Your Name &nbsp;·&nbsp; Projects</h1>
+    <p class="sub">Research · Software · Creative Work</p>
+  </header>
+
+  <nav id="main-nav">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="/projects" class="active">Projects</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h2 class="section-title">My Work</h2>
+
+    <!-- HOW TO ADD A PROJECT:
+         Duplicate one <article class="blog-entry"> block, then update:
+         - data-tags (for future filtering)
+         - img src and alt
+         - h2 title
+         - blog-entry-meta (date · category)
+         - paragraph description
+         - tag pills
+         - the <a> link and its text ("Read More", "View Demo", "Download", etc.)
+    -->
+
+    <!-- TODO: Replace with your first project -->
+    <article class="blog-entry" data-tags="category-one" style="animation-delay:0s">
+      <img src="../asset/images/placeholder.svg" alt="Project One Screenshot">
+      <div class="blog-entry-content">
+        <h2>Project Title One</h2>
+        <div class="blog-entry-meta">Month Year &nbsp;·&nbsp; Category</div>
+        <p>Describe what this project is, why you built it, and what problem it solves or what you learned.
+          Keep it to 3–4 sentences. This is a great place to mention technologies used or collaborators.</p>
+        <div class="tags">
+          <span class="tag-pill">Tag One</span>
+          <span class="tag-pill">Tag Two</span>
+        </div>
+        <!-- TODO: Update href and link text. Use "In Progress…" if not complete. -->
+        <a href="#" class="read-more">Read More</a>
+      </div>
+    </article>
+
+    <!-- TODO: Replace with your second project -->
+    <article class="blog-entry" data-tags="category-two" style="animation-delay:0.1s">
+      <img src="../asset/images/placeholder.svg" alt="Project Two Screenshot">
+      <div class="blog-entry-content">
+        <h2>Project Title Two</h2>
+        <div class="blog-entry-meta">Month Year &nbsp;·&nbsp; Category</div>
+        <p>Describe what this project is, why you built it, and what problem it solves or what you learned.
+          Keep it to 3–4 sentences. This is a great place to mention technologies used or collaborators.</p>
+        <div class="tags">
+          <span class="tag-pill">Tag One</span>
+          <span class="tag-pill">Tag Two</span>
+        </div>
+        <a href="#" class="read-more">View Demo</a>
+      </div>
+    </article>
+
+    <!-- TODO: Replace with your third project (or delete if not needed) -->
+    <article class="blog-entry" data-tags="category-one" style="animation-delay:0.2s">
+      <img src="../asset/images/placeholder.svg" alt="Project Three Screenshot">
+      <div class="blog-entry-content">
+        <h2>Project Title Three</h2>
+        <div class="blog-entry-meta">Month Year &nbsp;·&nbsp; Category</div>
+        <p>Describe what this project is, why you built it, and what problem it solves or what you learned.
+          Keep it to 3–4 sentences. This is a great place to mention technologies used or collaborators.</p>
+        <div class="tags">
+          <span class="tag-pill">Tag One</span>
+        </div>
+        <a href="#" class="read-more">Download Code</a>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <!-- TODO: Replace "Your Name" and your GitHub Pages URL -->
+    <p>© 2025 Your Name's Website. All rights reserved. &nbsp;·&nbsp;
+      <a href="/">yourusername.github.io</a>
+      &nbsp;·&nbsp; Template by <a href="https://github.com/CS721127" target="_blank" rel="noopener noreferrer">cs721127</a>
+    </p>
+  </footer>
+
+  <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">☰</button>
+
+  <script>
+    document.getElementById('nav-toggle').addEventListener('click', () =>
+      document.getElementById('main-nav').classList.toggle('open'));
+  </script>
+</body>
+
+</html>

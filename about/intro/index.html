@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- TODO: Replace "Your Name" with your name -->
+    <title>Your Name | A Day in the Life</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="nav-controls">
+        <a href="/about" class="home-btn" title="Go Back">
+        <span class="home-icon">🏠</span>
+        <span class="home-text">Back</span>
+        </a>
+    </div>
+
+    <button id="back-to-top" class="back-to-top" title="Scroll to Top">
+        <div class="arrow-up"></div>
+    </button>
+    
+    <div class="sky-background"></div>
+    <div class="stars"></div>
+    <div class="celestial-body sun"></div>
+    <div class="celestial-body moon"></div>
+
+    <div class="landscape">
+        <div class="mountains"></div>
+        <div class="ground"></div>
+    </div>
+
+    <main class="scroll-container">
+        <!-- MORNING: Intro / Profile -->
+        <section class="time-section" id="morning">
+            <div class="content-wrapper intro-card">
+                <div class="profile-header">
+                    <div class="profile-pic-container">
+                        <!-- TODO: Replace with your profile image path -->
+                        <img src="../../asset/images/placeholder.svg"
+                            alt="Profile Picture" class="profile-img">
+                    </div>
+                    <div class="intro-text">
+                        <h1 class="fade-in">Good Morning.</h1>
+                        <!-- TODO: Replace "Your Name" with your name -->
+                        <p class="subtitle fade-in delay-1">I'm <span class="highlight">Your Name</span>.</p>
+                        <!-- TODO: Replace with your year, degree, and university -->
+                        <p class="bio">1st Year [Degree] Student @ [University]. <br> [Your tagline or motto].</p>
+                        <div class="interactive-element wake-up-btn"> Hi there! Nice to meet you! 👋 <br> 
+                            <!-- TODO: Replace with your own intro message -->
+                            Unlike the boring resume, I'm going to introduce myself across "24 hours". <br>
+                            Scroll down the day (page) to know more about me 😉 </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EDUCATION Section -->
+        <section class="time-section" id="education">
+            <div class="content-wrapper">
+                <h2 class="fade-in">The Foundation.</h2>
+                <p class="subtitle">Education &amp; Achievements</p>
+                <div class="timeline">
+                    <!-- TODO: Add your education entries. Duplicate .timeline-item as needed. -->
+                    <div class="timeline-item">
+                        <div class="timeline-date">20XX – 20XX</div>
+                        <div class="timeline-content">
+                            <h3>Degree — Major</h3>
+                            <p><strong>University Name</strong></p>
+                            <p>One sentence about your focus or a notable achievement (e.g. WAM, GPA).</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">20XX – 20XX</div>
+                        <div class="timeline-content">
+                            <h3>High School Program</h3>
+                            <p><strong>School Name</strong></p>
+                            <p>GPA or notable achievement. Notable program or courses.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LATE MORNING: Tech / Serious Side -->
+        <section class="time-section" id="late-morning">
+            <div class="content-wrapper dual-personality serious">
+                <h2 class="fade-in">The Grind.</h2>
+                <!-- TODO: Replace with your major / focus -->
+                <p class="subtitle">[Major] Student @ [University]</p>
+                <div class="tech-stack">
+                    <h3>My Arsenal</h3>
+                    <div class="tags">
+                        <!-- TODO: Replace with your own skills / tools. Emojis optional! -->
+                        <span>Skill One 🛠️</span>
+                        <span>Skill Two ⚡</span>
+                        <span>Skill Three 🔬</span>
+                        <span>Skill Four 📊</span>
+                        <span>Skill Five 🌐</span>
+                    </div>
+                </div>
+                <div class="academic-focus">
+                    <h3>Focus</h3>
+                    <!-- TODO: Replace with what drives you academically or professionally -->
+                    <p>"[Your personal motto or academic philosophy]." <br>
+                    Exploring [area of interest] and creating [your goal]. <br>
+                    [One more sentence about where you're headed].</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPERIENCE Section -->
+        <section class="time-section" id="experience">
+            <div class="content-wrapper wide">
+                <h2 class="fade-in">Building the Future.</h2>
+                <p class="subtitle">Experience &amp; Projects</p>
+                <div class="experience-grid">
+                    <!-- TODO: Add your experience cards. Duplicate .experience-card as needed. -->
+                    <div class="experience-card">
+                        <div class="card-header">
+                            <h3>Role Title</h3>
+                            <span class="company">Organisation / Company Name</span>
+                            <span class="date">Month Year – Present / Month Year</span>
+                        </div>
+                        <p>Brief description of what you did and what you achieved in this role.</p>
+                    </div>
+                    <div class="experience-card">
+                        <div class="card-header">
+                            <h3>Role Title</h3>
+                            <span class="company">Organisation / Company Name</span>
+                            <span class="date">Month Year – Month Year</span>
+                        </div>
+                        <p>Brief description of what you did and what you achieved in this role.</p>
+                    </div>
+                </div>
+
+                <div class="project-showcase">
+                    <!-- TODO: Replace with your featured ongoing project -->
+                    <h3>Ongoing Project: [Project Name]</h3>
+                    <p>[One or two sentences describing the project and its purpose.]</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- NOON: Why this page / Fun Facts -->
+        <section class="time-section" id="noon">
+            <div class="content-wrapper centered">
+                <h2>Why this page?</h2>
+                <!-- TODO: Replace with your reason for creating this page -->
+                <p class="block-text">Standard resumes are boring. I wanted to build something you can scroll through — a
+                    digital handshake that lasts 24 hours (or however long you scroll).</p>
+
+                <div class="fun-fact-container">
+                    <h3>Fun Fact #<span id="fact-number">1</span></h3>
+                    <div class="fact-ticker">
+                        <p id="fact-text">Loading your fun facts…</p>
+                    </div>
+                    <button id="next-fact-btn">Next Fact ➡️</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SIDE QUESTS -->
+        <section class="time-section" id="side-quests">
+            <div class="content-wrapper">
+                <h2 class="fade-in">Side Quests.</h2>
+                <p class="subtitle">Just for Fun</p>
+                <div class="quest-log">
+                    <!-- TODO: Add your own "side quests" / hobbies. Replace or add .quest-item blocks. -->
+                    <div class="quest-item">
+                        <span class="quest-icon">🎨</span>
+                        <div class="quest-text">
+                            <h3>Hobby One</h3>
+                            <p>A funny or genuine sentence about this hobby and why you love it.</p>
+                        </div>
+                    </div>
+                    <div class="quest-item">
+                        <span class="quest-icon">🎸</span>
+                        <div class="quest-text">
+                            <h3>Hobby Two</h3>
+                            <p>Another hobby and a quirky detail about it.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AFTERNOON: Funny / Chaotic Side -->
+        <section class="time-section" id="afternoon">
+            <div class="content-wrapper dual-personality funny">
+                <h2 class="fade-in">Chaotic Energy.</h2>
+                <p class="subtitle">When I'm not working, I'm probably:</p>
+                <ul class="chaos-list">
+                    <!-- TODO: Replace with your own fun/relatable bullets -->
+                    <li>🍕 Hunting for the best [food] in town.</li>
+                    <li>📈 Refreshing [something] way too often.</li>
+                    <li>🛌 Telling myself "just five more minutes."</li>
+                </ul>
+                <!-- TODO: Replace with a fun image (can be a meme, hobby photo, etc.) -->
+                <div class="meme-placeholder" style="background-image: url('placeholder-fun.jpg');"></div>
+                <span>Something funny or meaningful to you.</span>
+            </div>
+        </section>
+
+        <!-- SUNSET: Travel / Gallery -->
+        <section class="time-section" id="sunset">
+            <div class="content-wrapper wide">
+                <h2 class="fade-in">Where I've Been.</h2>
+                <p class="subtitle">Chasing sunsets and new experiences.</p>
+                <div class="gallery-scroll">
+                    <!-- TODO: Replace each gallery-item background-image with your own travel/life photos.
+                         Images should be placed in this same folder (about/intro/).
+                         Add or remove items freely — each one is a scrollable card. -->
+                    <div class="gallery-item" style="background-image: url('photo1.jpg');">
+                        Location One 🌆
+                    </div>
+                    <div class="gallery-item" style="background-image: url('photo2.jpg');">
+                        Location Two 🌊
+                    </div>
+                    <div class="gallery-item" style="background-image: url('photo3.jpg');">
+                        Location Three 🏔️
+                    </div>
+                    <div class="gallery-item" style="background-image: url('photo4.jpg');">
+                        Location Four 🏙️
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NIGHT: Hobbies & Contact -->
+        <section class="time-section" id="night">
+            <div class="content-wrapper">
+                <h2 class="fade-in">Dream State.</h2>
+                <p class="subtitle">Philosophy, Hobbies &amp; The Future.</p>
+
+                <div class="hobbies-container">
+                    <!-- TODO: Replace with your hobbies -->
+                    <span class="hobby-tag">Hobby One 🎤</span>
+                    <span class="hobby-tag">Hobby Two 📚</span>
+                    <span class="hobby-tag">Hobby Three 🏃</span>
+                    <span class="hobby-tag">Hobby Four 🎮</span>
+                </div>
+
+                <div class="contact-area">
+                    <p>Want to chat about [your topics], life, or the universe?</p>
+                    <!-- TODO: Replace with your email -->
+                    <a href="mailto:youremail@example.com" class="contact-btn">Get in Touch</a>
+                </div>
+
+                <div class="social-links">
+                    <!-- TODO: Replace with your own social profile URLs -->
+                    <a href="https://github.com/yourusername">GitHub</a>
+                    <a href="https://www.linkedin.com/in/yourprofile">LinkedIn</a>
+                    <a href="https://www.instagram.com/yourhandle">Instagram</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="scroll-prompt">
+            <span>Scroll the Day</span>
+            <div class="arrow-down"></div>
+        </div>
+    </main>
+
+    <div class="ui-controls">
+        <div class="clock">06:00</div>
+    </div>
+
+    <!-- NOTE: script.js is copied verbatim from the original.
+         The only thing you need to update is the funFacts array inside script.js — 
+         replace the array items with your own fun facts! -->
+    <script src="script.js"></script>
+</body>
+
+</html>

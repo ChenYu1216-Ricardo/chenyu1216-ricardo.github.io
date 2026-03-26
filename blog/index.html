@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- TODO: Replace "Your Name" with your name -->
+  <title>Blog — Your Name</title>
+  <meta name="description" content="Essays and reflections by [Your Name] on personal growth, culture, books, and more.">
+  <link rel="stylesheet" href="../asset/css/theme.css">
+  <link rel="stylesheet" href="../asset/css/pages.css">
+  <style>
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.8rem;
+      margin-top: 0.5rem;
+    }
+
+    .blog-card {
+      background: var(--warm-white);
+      border-radius: 4px;
+      border: 1px solid var(--border);
+      box-shadow: 0 2px 12px var(--shadow);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      opacity: 0;
+      animation: cardUp 0.5s ease forwards;
+      transition: transform 0.28s, box-shadow 0.28s;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 32px var(--shadow);
+    }
+
+    .blog-card-thumb {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      display: block;
+      filter: sepia(6%) contrast(1.02);
+      transition: filter 0.35s;
+      flex-shrink: 0;
+    }
+
+    .blog-card:hover .blog-card-thumb {
+      filter: sepia(0%) contrast(1.06);
+    }
+
+    .blog-card::before {
+      content: '';
+      display: block;
+      height: 3px;
+      background: linear-gradient(90deg, var(--ocean), var(--gold-light));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+
+    .blog-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .blog-card-body {
+      padding: 1.3rem 1.5rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .blog-card-category {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold-mid);
+      margin-bottom: 0.5rem;
+    }
+
+    .blog-card h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 500;
+      font-size: 1.2rem;
+      color: var(--ocean);
+      line-height: 1.3;
+      margin-bottom: 0.55rem;
+    }
+
+    .blog-card-date {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.08em;
+      color: var(--text-light);
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+
+    .blog-card p {
+      font-size: 0.93rem;
+      color: var(--text-mid);
+      line-height: 1.65;
+      flex: 1;
+      margin-bottom: 1rem;
+    }
+
+    .blog-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 0.7rem;
+      border-top: 1px solid var(--border);
+      margin-top: auto;
+    }
+
+    .blog-tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+
+    .blog-card .read-more {
+      font-size: 0.77rem;
+      padding: 0.3rem 0.9rem;
+      background: var(--ocean);
+      color: var(--parchment);
+      border-radius: 2px;
+      text-decoration: none;
+      font-family: 'Fira Code', monospace;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: background 0.2s, transform 0.15s;
+      white-space: nowrap;
+    }
+
+    .blog-card .read-more:hover {
+      background: var(--gold);
+      transform: translateY(-1px);
+    }
+
+    /* Staggered animation delays */
+    .blog-card:nth-child(1) { animation-delay: 0.00s; }
+    .blog-card:nth-child(2) { animation-delay: 0.05s; }
+    .blog-card:nth-child(3) { animation-delay: 0.10s; }
+    .blog-card:nth-child(4) { animation-delay: 0.15s; }
+    .blog-card:nth-child(5) { animation-delay: 0.20s; }
+    .blog-card:nth-child(6) { animation-delay: 0.25s; }
+    .blog-card:nth-child(7) { animation-delay: 0.30s; }
+    .blog-card:nth-child(8) { animation-delay: 0.35s; }
+    .blog-card:nth-child(9) { animation-delay: 0.40s; }
+
+    .blog-card.hidden { display: none; }
+
+    .results-count {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      color: var(--text-light);
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    @media (max-width: 640px) {
+      .blog-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <!-- TODO: Replace "Your Name" and your blog tagline -->
+    <h1>Your Name &nbsp;·&nbsp; Blog</h1>
+    <p class="sub">Essays on growth, culture, literature, and technology</p>
+  </header>
+
+  <nav id="main-nav">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/blog" class="active">Blog</a></li>
+      <li><a href="/projects">Projects</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <!-- FILTER BAR -->
+    <div class="filter-bar">
+      <h3>Filter Posts</h3>
+      <div class="search-row">
+        <input type="text" id="search-input" placeholder="Search posts…">
+        <button id="search-button">Search</button>
+      </div>
+      <div class="filter-options">
+        <!-- TODO: Add or remove filter buttons matching the tags you use on your posts.
+             The data-tag value must exactly match the data-tags attribute on the blog-card below. -->
+        <button class="filter-option active" data-tag="all">All</button>
+        <button class="filter-option" data-tag="personal-growth">Personal Growth</button>
+        <button class="filter-option" data-tag="random-thoughts">Random Thoughts</button>
+        <button class="filter-option" data-tag="book-reviews">Book Reviews</button>
+        <button class="filter-option" data-tag="culture-share">Culture</button>
+        <button class="filter-option" data-tag="technology">Technology</button>
+      </div>
+    </div>
+
+    <div class="results-count" id="results-count">3 posts</div>
+
+    <!-- BLOG CARD GRID
+         HOW TO ADD A NEW POST:
+           1. Duplicate one <article class="blog-card"> block below.
+           2. Update the image src, data-tags (space-separated), category, date, title, description, and href.
+           3. Add a matching filter button in .filter-options above if it's a new tag.
+           That's it — the filter and search will pick it up automatically.
+    -->
+    <div class="blog-grid" id="blog-grid">
+
+      <!-- Sample Post 1 -->
+      <article class="blog-card" data-tags="personal-growth">
+        <img class="blog-card-thumb" src="../asset/images/placeholder.svg" alt="Post Image">
+        <div class="blog-card-body">
+          <!-- TODO: Replace category, date, title, description, and href -->
+          <div class="blog-card-category">Personal Growth</div>
+          <div class="blog-card-date">Month DD, 20XX</div>
+          <h2>Your First Blog Post Title Goes Here</h2>
+          <p>A short description of what this post is about. Two or three sentences that give the reader a clear idea of what to expect.</p>
+          <div class="blog-card-footer">
+            <div class="blog-tag-row">
+              <span class="tag-pill">Personal Growth</span>
+            </div>
+            <!-- TODO: Update href to the actual post file, e.g. your-post-slug.html -->
+            <a href="sample-post.html" class="read-more">Read →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Sample Post 2 -->
+      <article class="blog-card" data-tags="random-thoughts">
+        <img class="blog-card-thumb" src="../asset/images/placeholder.svg" alt="Post Image">
+        <div class="blog-card-body">
+          <div class="blog-card-category">Random Thoughts</div>
+          <div class="blog-card-date">Month DD, 20XX</div>
+          <h2>Your Second Blog Post Title Goes Here</h2>
+          <p>A short description of what this post is about. Two or three sentences that give the reader a clear idea of what to expect.</p>
+          <div class="blog-card-footer">
+            <div class="blog-tag-row">
+              <span class="tag-pill">Random Thoughts</span>
+            </div>
+            <a href="sample-post.html" class="read-more">Read →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Sample Post 3 -->
+      <article class="blog-card" data-tags="culture-share">
+        <img class="blog-card-thumb" src="../asset/images/placeholder.svg" alt="Post Image">
+        <div class="blog-card-body">
+          <div class="blog-card-category">Culture Share</div>
+          <div class="blog-card-date">Month DD, 20XX</div>
+          <h2>Your Third Blog Post Title Goes Here</h2>
+          <p>A short description of what this post is about. Two or three sentences that give the reader a clear idea of what to expect.</p>
+          <div class="blog-card-footer">
+            <div class="blog-tag-row">
+              <span class="tag-pill">Culture Share</span>
+            </div>
+            <a href="sample-post.html" class="read-more">Read →</a>
+          </div>
+        </div>
+      </article>
+
+    </div><!-- /blog-grid -->
+  </main>
+
+  <footer>
+    <!-- TODO: Replace "Your Name" and your GitHub Pages URL -->
+    <p>© 2025 Your Name's Website. All rights reserved. &nbsp;·&nbsp;
+      <a href="/">yourusername.github.io</a>
+      &nbsp;·&nbsp; Template by <a href="https://github.com/CS721127" target="_blank" rel="noopener noreferrer">cs721127</a>
+    </p>
+  </footer>
+
+  <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">☰</button>
+
+  <script>
+    document.getElementById('nav-toggle').addEventListener('click', () =>
+      document.getElementById('main-nav').classList.toggle('open'));
+
+    const cards = Array.from(document.querySelectorAll('.blog-card'));
+    const filterOptions = document.querySelectorAll('.filter-option');
+    const searchInput = document.getElementById('search-input');
+    const searchButton = document.getElementById('search-button');
+    const countEl = document.getElementById('results-count');
+
+    function filterPosts() {
+      const activeTag = document.querySelector('.filter-option.active').dataset.tag;
+      const term = searchInput.value.toLowerCase().trim();
+      let visible = 0;
+      cards.forEach(card => {
+        const tags = card.dataset.tags || '';
+        const text = card.textContent.toLowerCase();
+        const tagOk = activeTag === 'all' || tags.includes(activeTag);
+        const searchOk = !term || text.includes(term);
+        if (tagOk && searchOk) {
+          card.classList.remove('hidden');
+          visible++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+      countEl.textContent = visible === 1 ? '1 post' : `${visible} posts`;
+    }
+
+    filterOptions.forEach(opt => opt.addEventListener('click', () => {
+      document.querySelector('.filter-option.active').classList.remove('active');
+      opt.classList.add('active');
+      filterPosts();
+    }));
+
+    searchButton.addEventListener('click', filterPosts);
+    searchInput.addEventListener('keydown', e => { if (e.key === 'Enter') filterPosts(); });
+    searchInput.addEventListener('input', filterPosts);
+
+    filterPosts();
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#dce8f5"/>
+  <rect x="0" y="0" width="800" height="600" fill="none" stroke="#b0cde4" stroke-width="4"/>
+  <line x1="0" y1="0" x2="800" y2="600" stroke="#b0cde4" stroke-width="1.5"/>
+  <line x1="800" y1="0" x2="0" y2="600" stroke="#b0cde4" stroke-width="1.5"/>
+  <rect x="280" y="220" width="240" height="160" rx="8" fill="#ffffff" fill-opacity="0.7"/>
+  <text x="400" y="290" font-family="Georgia, serif" font-size="20" fill="#1a3a5c" text-anchor="middle">📷 Your Image</text>
+  <text x="400" y="320" font-family="'Courier New', monospace" font-size="12" fill="#6a7d96" text-anchor="middle">Replace with your photo</text>
+</svg>
